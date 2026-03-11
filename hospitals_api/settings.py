@@ -42,9 +42,9 @@ DJANGO_APPS = [
     'django.contrib.gis',
 ]
 
-THIRD_PARTY_APPS = ['rest_framework', 'rest_framework_gis']
+THIRD_PARTY_APPS = ['rest_framework', 'rest_framework_gis', 'leaflet']
 
-PROJECT_APPS = []
+PROJECT_APPS = ['hospitals.apps.HospitalsConfig', 'boundaries.apps.BoundariesConfig']
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 
@@ -133,3 +133,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+LEAFLET_CONFIG={
+    'DEFAULT_CENTER' : (-1.94, 29.87),
+    'DEFAULT_ZONE' : 8,
+    'MAX_ZOOM' : 20,
+    'MIN_ZOOM' : 3,
+    'SCALE' : 'both',
+    'ATTRIBUTION_PREFIX' : 'Hopitals API',
+}

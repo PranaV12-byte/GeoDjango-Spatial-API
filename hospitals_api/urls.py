@@ -20,3 +20,7 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
+
+admin.site.site_header='Hospitals Admin'
+admin.site.site_title='Rwanda GIS Admin Portal'
+admin.site.site_title ='Welcome to Rwanada GIS Portal'

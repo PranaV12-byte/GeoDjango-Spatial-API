@@ -1,0 +1,28 @@
+FROM python:3.11-slim-bookworm
+
+WORKDIR /app
+
+LABEL maintainer='kpranav122005@gmail.com'
+LABEL description='Development Image'
+
+ENV PYTHONDONTWRITEBYTECODE 1
+
+ENV PYTHONUNBUFFERED 1
+
+RUN apt-get update \
+    && apt-get -y install netcat-openbsd gcc postgresql-client\
+    && apt-get clean
+
+RUN apt-get update \
+    && apt-get install -y binutils libproj-dev gdal-bin python3-gdal
+
+RUN pip install --upgrade pip
+
+COPY ./requirements.txt /app/requirements.txt
+
+RUN pip install -r requirements.txt
+
+COPY . /app
+
+
+

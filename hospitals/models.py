@@ -1,6 +1,6 @@
-from django.db import models
 from django.contrib.gis.db import models
 from django.utils.translation import gettext_lazy as _
+
 
 class Hospital(models.Model):
     name = models.CharField(_("Hospital Name"), max_length=200)
@@ -14,6 +14,3 @@ class Hospital(models.Model):
 
     def __str__(self):
         return self.name
-    
-    
-
